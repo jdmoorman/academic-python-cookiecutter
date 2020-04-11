@@ -1,5 +1,5 @@
 Welcome to {{ cookiecutter.project_name }}'s documentation!
-======================================
+===============================================================
 
 .. toctree::
    :hidden:
