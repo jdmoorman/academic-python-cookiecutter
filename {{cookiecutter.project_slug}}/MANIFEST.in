@@ -2,6 +2,7 @@ include LICENSE
 include *.md
 include *.yaml
 include .editorconfig
+include .isort.cfg
 
 # Tests
 include tox.ini

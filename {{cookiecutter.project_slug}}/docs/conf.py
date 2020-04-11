@@ -21,7 +21,7 @@
 import os
 import sys
 
-import sphinx_rtd_theme
+import sphinx_rtd_theme  # noqa: F401
 
 import {{ cookiecutter.project_slug }}
 
@@ -43,6 +43,7 @@ extensions = [
     "sphinx.ext.napoleon",
     "sphinx.ext.mathjax",
     "sphinx.ext.todo",
+    "sphinx_rtd_theme",
 ]
 
 # Control napoleon
