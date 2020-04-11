@@ -50,16 +50,6 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for information related to developing the
   * Copy the token provided, go to your [GitHub repository's settings and under the `Secrets` tab](https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.github_project_name }}/settings/secrets),
   add a secret called `CODECOV_TOKEN` with the token you just copied.
   Don't worry, no one will see this token because it will be encrypted.
-* Generate and add an access token as a secret to the repository for auto documentation generation to work
-  * Go to your [GitHub account's Personal Access Tokens page](https://github.com/settings/tokens)
-  * Click: `Generate new token`
-  * _Recommendations:_
-    * _Name the token: "Auto-Documentation Generation" or similar so you know what it is being used for later_
-    * _Select only: `repo:status`, `repo_deployment`, and `public_repo` to limit what this token has access to_
-  * Copy the newly generated token
-  * Go to your [GitHub repository's settings and under the `Secrets` tab](https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.github_project_name }}/settings/secrets),
-  add a secret called `ACCESS_TOKEN` with the personal access token you just created.
-  Don't worry, no one will see this password because it will be encrypted.
 * Register your project with PyPI:
   * Make an account on [pypi.org](https://pypi.org)
   * Go to your [GitHub repository's settings and under the `Secrets` tab](https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.github_project_name }}/settings/secrets),

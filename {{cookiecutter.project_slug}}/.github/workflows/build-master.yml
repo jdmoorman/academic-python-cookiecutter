@@ -20,7 +20,7 @@ jobs:
         os: [ubuntu-latest, windows-latest, macos-latest]
     env:
       COVERAGE_PYTHON_VERSION: 3.7
-      COVERAGE_OS: macos-latest
+      COVERAGE_OS: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v1

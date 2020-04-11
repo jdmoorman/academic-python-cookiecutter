@@ -13,4 +13,4 @@ subprocess.call(['git', 'commit', '-m', 'Initial commit'])
 # Push to github repository if it exists.
 subprocess.call(['git', 'remote', 'add', 'origin', r'git@github.com:{{ cookiecutter.github_username }}/{{ cookiecutter.github_project_name }}.git'])
 subprocess.call(['git', 'remote', '-v'])
-subprocess.call(['git', 'push', '-u', 'origin', 'master'])
+subprocess.call(['git', 'push', '--set-upstream', 'origin', 'master'])
