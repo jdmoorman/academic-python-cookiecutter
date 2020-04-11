@@ -10,7 +10,7 @@ with open("README.md") as readme_file:
 
 test_requirements = ["codecov", "pytest", "pytest-cov", "pytest-raises"]
 
-docs_requirements = ["sphinx", "sphinx-rtd-theme"]
+docs_requirements = ["sphinx==1.8.5", "sphinx-rtd-theme"]
 
 setup_requirements = ["pytest-runner"]
 
@@ -91,7 +91,7 @@ setup(
     test_suite="tests",
     tests_require=test_requirements,
     extras_require=extra_requirements,
-    url="https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}",
+    url="https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.github_project_name }}",
     # Do not edit this string manually, always use bumpversion
     # Details in CONTRIBUTING.rst
     version="{{ cookiecutter.version }}",

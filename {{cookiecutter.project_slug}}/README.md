@@ -1,9 +1,8 @@
-{% set is_open_source = cookiecutter.open_source_license != 'Not open source' -%}
 # {{ cookiecutter.project_name }}
 
-[![Build Status](https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/workflows/Build%20Master/badge.svg)](https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/actions)
-[![Documentation](https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/workflows/Documentation/badge.svg)](https://{{ cookiecutter.github_username }}.github.io/{{ cookiecutter.project_slug }})
-[![Code Coverage](https://codecov.io/gh/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/branch/master/graph/badge.svg)](https://codecov.io/gh/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }})
+[![Build Status](https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.github_project_name }}/workflows/Build%20Master/badge.svg)](https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.github_project_name }}/actions)
+[![Documentation](https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.github_project_name }}/workflows/Documentation/badge.svg)](https://{{ cookiecutter.github_username }}.github.io/{{ cookiecutter.project_slug }})
+[![Code Coverage](https://codecov.io/gh/{{ cookiecutter.github_username }}/{{ cookiecutter.github_project_name }}/branch/master/graph/badge.svg)](https://codecov.io/gh/{{ cookiecutter.github_username }}/{{ cookiecutter.github_project_name }})
 
 {{ cookiecutter.project_short_description }}
 
@@ -23,49 +22,31 @@ a.get_value()  # 10
 
 ## Installation
 **Stable Release:** `pip install {{ cookiecutter.project_slug }}`<br>
-**Development Head:** `pip install git+https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}.git`
+**Development Head:** `pip install git+https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.github_project_name }}.git`
 
 ## Documentation
+TODO: readthedocs
 For full package documentation please visit [{{ cookiecutter.github_username }}.github.io/{{ cookiecutter.project_slug }}](https://{{ cookiecutter.github_username }}.github.io/{{ cookiecutter.project_slug }}).
 
 ## Development
 See [CONTRIBUTING.md](CONTRIBUTING.md) for information related to developing the code.
 
-## The Four Commands You Need To Know
+## The Commands You Need To Know
 1. `pip install -e .[dev]`
 
     This will install your package in editable mode with all the required development dependencies (i.e. `tox`).
 
-2. `make build`
+2. `tox -e <env>`
 
-    This will run `tox` which will run all your tests in both Python 3.6, Python 3.7, and Python 3.8 as well as linting
-    your code.
-
-3. `make clean`
-
-    This will clean up various Python and build generated files so that you can ensure that you are working in a clean
-    environment.
-
-4. `make docs`
-
-    This will generate and launch a web browser to view the most up-to-date documentation for your Python package.
+    This will use tox to run the steps outlined in the `[testenv:<env>]` section of `tox.ini`.
 
 #### Additional Optional Setup Steps:
-* Turn your project into a GitHub repository:
-  * Make sure you have `git` installed, if you don't, [follow these instructions](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
-  * Make an account on [github.com](https://github.com)
-  * Go to [make a new repository](https://github.com/new)
-  * _Recommendations:_
-    * _It is strongly recommended to make the repository name the same as the Python package name_
-    * _A lot of the following optional steps are *free* if the repository is Public, plus open source is cool_
-  * Once you are in your newly generated cookiecutter Python project directory, run `git init`
-  * After `git` has initialized locally, run the following commands:
-    * `git remote add origin git@github.com:{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}.git`
-    * `git push -u origin master`
+* Make sure the github repository initialized correctly at
+    * `https://github.com:{{ cookiecutter.github_username }}/{{ cookiecutter.github_project_name }}.git`
 * Register {{ cookiecutter.project_slug }} with Codecov:
   * Make an account on [codecov.io](https://codecov.io) (Recommended to sign in with GitHub)
   * Select `{{ cookiecutter.github_username }}` and click: `Add new repository`
-  * Copy the token provided, go to your [GitHub repository's settings and under the `Secrets` tab](https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/settings/secrets),
+  * Copy the token provided, go to your [GitHub repository's settings and under the `Secrets` tab](https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.github_project_name }}/settings/secrets),
   add a secret called `CODECOV_TOKEN` with the token you just copied.
   Don't worry, no one will see this token because it will be encrypted.
 * Generate and add an access token as a secret to the repository for auto documentation generation to work
@@ -75,12 +56,12 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for information related to developing the
     * _Name the token: "Auto-Documentation Generation" or similar so you know what it is being used for later_
     * _Select only: `repo:status`, `repo_deployment`, and `public_repo` to limit what this token has access to_
   * Copy the newly generated token
-  * Go to your [GitHub repository's settings and under the `Secrets` tab](https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/settings/secrets),
+  * Go to your [GitHub repository's settings and under the `Secrets` tab](https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.github_project_name }}/settings/secrets),
   add a secret called `ACCESS_TOKEN` with the personal access token you just created.
   Don't worry, no one will see this password because it will be encrypted.
 * Register your project with PyPI:
   * Make an account on [pypi.org](https://pypi.org)
-  * Go to your [GitHub repository's settings and under the `Secrets` tab](https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/settings/secrets),
+  * Go to your [GitHub repository's settings and under the `Secrets` tab](https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.github_project_name }}/settings/secrets),
   add a secret called `PYPI_TOKEN` with your password for your PyPI account.
   Don't worry, no one will see this password because it will be encrypted.
   * Next time you push to the branch: `stable`, GitHub actions will build and deploy your Python package to PyPI.
@@ -89,7 +70,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for information related to developing the
 * Add branch protections to `master` and `stable`
     * To protect from just anyone pushing to `master` or `stable` (the branches with more tests and deploy
     configurations)
-    * Go to your [GitHub repository's settings and under the `Branches` tab](https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/settings/branches), click `Add rule` and select the
+    * Go to your [GitHub repository's settings and under the `Branches` tab](https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.github_project_name }}/settings/branches), click `Add rule` and select the
     settings you believe best.
     * _Recommendations:_
       * _Require pull request reviews before merging_
@@ -110,7 +91,3 @@ branch.
 atomic and as a side effect naturally encourages small well defined PR's.
 5. GitHub's UI is bad for rebasing `master` onto `stable`, as it simply adds the commits to the other branch instead of
 properly rebasing from what I can tell. You should always rebase locally on the CLI until they fix it.
-
-{% if is_open_source %}
-***Free software: {{ cookiecutter.open_source_license }}***
-{% endif %}
