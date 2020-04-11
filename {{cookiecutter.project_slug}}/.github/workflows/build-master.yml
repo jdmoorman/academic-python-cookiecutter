@@ -17,10 +17,10 @@ jobs:
     strategy:
       matrix:
         python-version: [3.6, 3.7, 3.8]
-        os: [ubuntu-latest, windows-latest, macOS-latest]
+        os: [ubuntu-latest, windows-latest, macos-latest]
     env:
-      COVERAGE_PYTHON_VERSION: 3.6
-      COVERAGE_OS: macOS-latest
+      COVERAGE_PYTHON_VERSION: 3.7
+      COVERAGE_OS: macos-latest
 
     steps:
     - uses: actions/checkout@v1
@@ -34,6 +34,11 @@ jobs:
         python -m pip install --upgrade virtualenv tox tox-gh-actions
     - name: "Run tox targets for ${{ matrix.python-version }}"
       run: "python -m tox"
+    - name: "Generate coverage report"
+      if: env.COVERAGE_PYTHON_VERSION == matrix.python-version && env.COVERAGE_OS == matrix.os
+      run: |
+        python -m pip install --upgrade coverage
+        python -m coverage xml
     - name: "Upload coverage to Codecov"
       if: env.COVERAGE_PYTHON_VERSION == matrix.python-version && env.COVERAGE_OS == matrix.os
       uses: "codecov/codecov-action@v1"

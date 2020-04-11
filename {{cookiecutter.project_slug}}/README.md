@@ -1,7 +1,7 @@
 # {{ cookiecutter.project_name }}
 
 [![Build Status](https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.github_project_name }}/workflows/Build%20Master/badge.svg)](https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.github_project_name }}/actions)
-[![Documentation](https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.github_project_name }}/workflows/Documentation/badge.svg)](https://{{ cookiecutter.github_username }}.github.io/{{ cookiecutter.project_slug }})
+[![Documentation](https://readthedocs.org/projects/{{ cookiecutter.project_slug | replace("_", "-") }}/badge/?version=latest)](https://{{ cookiecutter.project_slug | replace("_", "-") }}.readthedocs.io/en/latest/?badge=latest)
 [![Code Coverage](https://codecov.io/gh/{{ cookiecutter.github_username }}/{{ cookiecutter.github_project_name }}/branch/master/graph/badge.svg)](https://codecov.io/gh/{{ cookiecutter.github_username }}/{{ cookiecutter.github_project_name }})
 
 {{ cookiecutter.project_short_description }}
@@ -14,10 +14,11 @@
 
 ## Quick Start
 ```python
-from {{ cookiecutter.project_slug }} import Example
+>>> from {{ cookiecutter.project_slug }} import Example
+>>> a = Example()
+>>> a.get_value()
+10
 
-a = Example()
-a.get_value()  # 10
 ```
 
 ## Installation
