@@ -1,6 +1,7 @@
 include LICENSE
 include *.md
 include *.yaml
+include .editorconfig
 
 # Tests
 include tox.ini
