@@ -25,7 +25,7 @@ dev_requirements = [
     *docs_requirements,
     *setup_requirements,
     {% if cookiecutter.precommit is true -%}"pre-commit",{% endif %}
-    "bumpversion>=0.5.3",
+    "bump2version>=1.0.0",
     "ipython>=7.5.0",
     {% if cookiecutter.tests is true -%}"tox>=3.5.2",{% endif %}
     "twine>=1.13.0",
