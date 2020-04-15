@@ -14,5 +14,6 @@ To use this template use the following commands and then follow the prompts from
 1. `pip install cookiecutter`
 2. `cookiecutter gh:jdmoorman/cookiecutter-pypackage`
 
-**Original repo:** https://github.com/audreyr/cookiecutter-pypackage/
-**Original repo:** https://github.com/AllenCellModeling/cookiecutter-pypackage/
+## Credits
+
+This template was forked from https://github.com/AllenCellModeling/cookiecutter-pypackage/ which was based on https://github.com/audreyr/cookiecutter-pypackage/
