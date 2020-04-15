@@ -9,25 +9,25 @@ with open("README.md") as readme_file:
     readme = readme_file.read()
 
 test_requirements = [
-    {% if cookiecutter.tests is true -%}"codecov", "pytest", "pytest-cov", "pytest-raises"{% endif %}
+    {% if cookiecutter.tests | lower == "true" -%}"codecov", "pytest", "pytest-cov", "pytest-raises"{% endif %}
 ]
 
 docs_requirements = [
-    {% if cookiecutter.documentation is true -%}"sphinx==1.8.5", "sphinx-rtd-theme"{% endif %}
+    {% if cookiecutter.documentation | lower == "true" -%}"sphinx==1.8.5", "sphinx-rtd-theme"{% endif %}
 ]
 
 setup_requirements = [
-    {% if cookiecutter.tests is true -%}"pytest-runner"{% endif %}
+    {% if cookiecutter.tests | lower == "true" -%}"pytest-runner"{% endif %}
 ]
 
 dev_requirements = [
     *test_requirements,
     *docs_requirements,
     *setup_requirements,
-    {% if cookiecutter.precommit is true -%}"pre-commit",{% endif %}
+    {% if cookiecutter.precommit | lower == "true" -%}"pre-commit",{% endif %}
     "bump2version>=1.0.0",
     "ipython>=7.5.0",
-    {% if cookiecutter.tests is true -%}"tox>=3.5.2",{% endif %}
+    {% if cookiecutter.tests | lower == "true" -%}"tox>=3.5.2",{% endif %}
     "twine>=1.13.0",
     "wheel>=0.33.1",
 ]

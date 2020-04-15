@@ -2,10 +2,10 @@
 
 [![PyPI Version](https://img.shields.io/pypi/v/{{ cookiecutter.pypi_project_name }}.svg)](https://pypi.org/project/{{ cookiecutter.pypi_project_name }}/)
 [![Supported Python Versions](https://img.shields.io/pypi/pyversions/{{ cookiecutter.pypi_project_name }}.svg)](https://pypi.org/project/{{ cookiecutter.pypi_project_name }}/)
-{% if cookiecutter.github_actions is true -%}[![Build Status](https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.github_project_name }}/workflows/CI/badge.svg)](https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.github_project_name }}/actions){% endif %}
-{% if cookiecutter.documentation is true -%}[![Documentation](https://readthedocs.org/projects/{{ cookiecutter.project_slug | replace("_", "-") }}/badge/?version=latest)](https://{{ cookiecutter.project_slug | replace("_", "-") }}.readthedocs.io/en/latest/?badge=latest) {% endif -%}
-{% if cookiecutter.github_actions is true -%}[![Code Coverage](https://codecov.io/gh/{{ cookiecutter.github_username }}/{{ cookiecutter.github_project_name }}/branch/master/graph/badge.svg)](https://codecov.io/gh/{{ cookiecutter.github_username }}/{{ cookiecutter.github_project_name }}){% endif -%}
-{% if cookiecutter.precommit is true -%}[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black){% endif -%}
+{% if cookiecutter.github_actions | lower == "true" -%}[![Build Status](https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.github_project_name }}/workflows/CI/badge.svg)](https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.github_project_name }}/actions){% endif %}
+{% if cookiecutter.documentation | lower == "true" -%}[![Documentation](https://readthedocs.org/projects/{{ cookiecutter.project_slug | replace("_", "-") }}/badge/?version=latest)](https://{{ cookiecutter.project_slug | replace("_", "-") }}.readthedocs.io/en/latest/?badge=latest) {% endif -%}
+{% if cookiecutter.github_actions | lower == "true" -%}[![Code Coverage](https://codecov.io/gh/{{ cookiecutter.github_username }}/{{ cookiecutter.github_project_name }}/branch/master/graph/badge.svg)](https://codecov.io/gh/{{ cookiecutter.github_username }}/{{ cookiecutter.github_project_name }}){% endif -%}
+{% if cookiecutter.precommit | lower == "true" -%}[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black){% endif -%}
 
 {{ cookiecutter.github_short_description }}
 
