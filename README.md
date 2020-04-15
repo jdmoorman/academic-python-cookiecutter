@@ -1,7 +1,6 @@
 # Cookiecutter PyPackage
 
 TODO: Update cookiecutter docs to reflect personal setup.
-TODO: Make docs directory optional
 TODO: Check compatibility with readthedocs.
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
@@ -23,7 +22,7 @@ This repository is a template for `cookiecutter` to generate a Python project wh
 We think that this template provides a good starting point for any Python project.
 
 ## Features
-* Uses `tox` (an environment manager) and `pytest` for local testing, simply run `tox` 
+* Uses `tox` (an environment manager) and `pytest` for local testing, simply run `tox`
 from a terminal in the project home directory
 * Runs tests on Windows, Mac, and Ubuntu on every branch and pull request commit using GitHub Actions
 * Releases your Python Package to PyPI when you push to `stable` using GitHub Actions

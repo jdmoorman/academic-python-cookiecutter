@@ -2,18 +2,18 @@
 
 [![PyPI Version](https://img.shields.io/pypi/v/{{ cookiecutter.pypi_project_name }}.svg)](https://pypi.org/project/{{ cookiecutter.pypi_project_name }}/)
 [![Supported Python Versions](https://img.shields.io/pypi/pyversions/{{ cookiecutter.pypi_project_name }}.svg)](https://pypi.org/project/{{ cookiecutter.pypi_project_name }}/)
-[![Build Status](https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.github_project_name }}/workflows/CI/badge.svg)](https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.github_project_name }}/actions)
-[![Documentation](https://readthedocs.org/projects/{{ cookiecutter.project_slug | replace("_", "-") }}/badge/?version=latest)](https://{{ cookiecutter.project_slug | replace("_", "-") }}.readthedocs.io/en/latest/?badge=latest)
-[![Code Coverage](https://codecov.io/gh/{{ cookiecutter.github_username }}/{{ cookiecutter.github_project_name }}/branch/master/graph/badge.svg)](https://codecov.io/gh/{{ cookiecutter.github_username }}/{{ cookiecutter.github_project_name }})
-[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+{% if cookiecutter.github_actions is true -%}[![Build Status](https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.github_project_name }}/workflows/CI/badge.svg)](https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.github_project_name }}/actions){% endif %}
+{% if cookiecutter.documentation is true -%}[![Documentation](https://readthedocs.org/projects/{{ cookiecutter.project_slug | replace("_", "-") }}/badge/?version=latest)](https://{{ cookiecutter.project_slug | replace("_", "-") }}.readthedocs.io/en/latest/?badge=latest) {% endif -%}
+{% if cookiecutter.github_actions is true -%}[![Code Coverage](https://codecov.io/gh/{{ cookiecutter.github_username }}/{{ cookiecutter.github_project_name }}/branch/master/graph/badge.svg)](https://codecov.io/gh/{{ cookiecutter.github_username }}/{{ cookiecutter.github_project_name }}){% endif -%}
+{% if cookiecutter.precommit is true -%}[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black){% endif -%}
 
 {{ cookiecutter.github_short_description }}
 
 ---
 
-## Features
-* Store values and retain the prior value in memory
-* ... some other functionality
+## Installation
+**Stable Release:** `pip install {{ cookiecutter.project_slug }}`<br>
+**Development Head:** `pip install git+https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.github_project_name }}.git`
 
 ## Quick Start
 ```python
@@ -24,25 +24,18 @@
 
 ```
 
-## Installation
-**Stable Release:** `pip install {{ cookiecutter.project_slug }}`<br>
-**Development Head:** `pip install git+https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.github_project_name }}.git`
+## Citing
+If you use our work in an academic setting, please cite our paper:
+
 
 ## Documentation
 TODO: readthedocs
-For full package documentation please visit [{{ cookiecutter.github_username }}.github.io/{{ cookiecutter.project_slug }}](https://{{ cookiecutter.github_username }}.github.io/{{ cookiecutter.project_slug }}).
+For more information, read the docs.
+
 
 ## Development
 See [CONTRIBUTING.md](CONTRIBUTING.md) for information related to developing the code.
 
-## The Commands You Need To Know
-1. `pip install -e .[dev]`
-
-    This will install your package in editable mode with all the required development dependencies (i.e. `tox`).
-
-2. `tox -e <env>`
-
-    This will use tox to run the steps outlined in the `[testenv:<env>]` section of `tox.ini`.
 
 #### Additional Optional Setup Steps:
 * Make sure the github repository initialized correctly at
