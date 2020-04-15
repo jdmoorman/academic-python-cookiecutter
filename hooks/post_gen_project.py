@@ -45,10 +45,10 @@ def create_git_repo(manifest):
         subprocess.call(['git', 'add', '.'])
         subprocess.call(['git', 'commit', '-m', 'Initial commit'])
 
-    # Push to github repository if it exists.
-    subprocess.call(['git', 'remote', 'add', 'origin', r'git@github.com:{{ cookiecutter.github_username }}/{{ cookiecutter.github_project_name }}.git'])
-    subprocess.call(['git', 'remote', '-v'])
-    subprocess.call(['git', 'push', '--set-upstream', 'origin', 'master'])
+#     # Push to github repository if it exists.
+#     subprocess.call(['git', 'remote', 'add', 'origin', r'git@github.com:{{ cookiecutter.github_username }}/{{ cookiecutter.github_project_name }}.git'])
+#     subprocess.call(['git', 'remote', '-v'])
+#     subprocess.call(['git', 'push', '--set-upstream', 'origin', 'master'])
 
 if __name__ == "__main__":
     manifest = get_manifest()
