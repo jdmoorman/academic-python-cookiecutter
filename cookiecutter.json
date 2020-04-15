@@ -18,7 +18,7 @@
   ],
   "bells_and_whistles": true,
   "command_line_interface": "{{ cookiecutter.bells_and_whistles }}",
-  "documentation": "{{ cookiecutter.bells_and_whistles }}",
+  "sphinx_docs": "{{ cookiecutter.bells_and_whistles }}",
   "github_actions": "{{ cookiecutter.bells_and_whistles }}",
   "precommit": "{{ cookiecutter.bells_and_whistles }}",
   "tests": "{{ cookiecutter.bells_and_whistles }}",

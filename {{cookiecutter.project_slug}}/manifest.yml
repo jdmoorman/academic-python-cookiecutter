@@ -1,6 +1,6 @@
 features:
   - name: documentation
-    enabled: {{cookiecutter.documentation|lower}}
+    enabled: {{cookiecutter.sphinx_docs|lower}}
     resources:
       - docs
 

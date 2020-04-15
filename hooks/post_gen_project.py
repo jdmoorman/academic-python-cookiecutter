@@ -7,7 +7,7 @@ MANIFEST = "manifest.yml"
 
 def get_manifest():
     with open(MANIFEST) as manifest_file:
-        manifest = yaml.load(manifest_file)
+        manifest = yaml.safe_load(manifest_file)
     return manifest
 
 def delete_resources_for_disabled_features(manifest):
@@ -37,13 +37,13 @@ def create_git_repo(manifest):
     if precommit_enabled:
         subprocess.call(['pre-commit', 'install'])
 
+    if precommit_enabled:
+        # Hooks will fail the first time around, so we try twice.
+        subprocess.run(['git', 'add', '.'], capture_output=True)
+        subprocess.run(['git', 'commit', '-m', 'Initial commit'], capture_output=True)
+
     subprocess.call(['git', 'add', '.'])
     subprocess.call(['git', 'commit', '-m', 'Initial commit'])
-
-    if precommit_enabled:
-        # Hooks will fail the first time around. Try again.
-        subprocess.call(['git', 'add', '.'])
-        subprocess.call(['git', 'commit', '-m', 'Initial commit'])
 
 #     # Push to github repository if it exists.
 #     subprocess.call(['git', 'remote', 'add', 'origin', r'git@github.com:{{ cookiecutter.github_username }}/{{ cookiecutter.github_project_name }}.git'])

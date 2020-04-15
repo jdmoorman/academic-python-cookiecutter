@@ -9,11 +9,11 @@ with open("README.md") as readme_file:
     readme = readme_file.read()
 
 test_requirements = [
-    {% if cookiecutter.tests | lower == "true" -%}"codecov", "pytest", "pytest-cov", "pytest-raises"{% endif %}
+    {% if cookiecutter.tests | lower == "true" -%}"pytest", "pytest-cov", "pytest-raises"{% endif %}
 ]
 
 docs_requirements = [
-    {% if cookiecutter.documentation | lower == "true" -%}"sphinx==1.8.5", "sphinx-rtd-theme"{% endif %}
+    {% if cookiecutter.sphinx_docs | lower == "true" -%}"sphinx==1.8.5", "sphinx-rtd-theme"{% endif %}
 ]
 
 setup_requirements = [
