@@ -10,14 +10,13 @@
   "pypi_short_description": "{{ cookiecutter.github_short_description }}",
   "version": "0.0.1",
   "open_source_license": [
-    "MIT License",
-    "BSD license",
-    "ISC license",
+    "MIT",
+    "BSD",
+    "ISC",
     "Apache Software License 2.0",
-    "GNU General Public License v3",
-    "Not open source"
+    "GNU GPL v3"
   ],
-  "bells_and_whistles": [true, false],
+  "bells_and_whistles": [false, true],
   "command_line_interface": "{{ cookiecutter.bells_and_whistles }}",
   "documentation": "{{ cookiecutter.bells_and_whistles }}",
   "github_actions": "{{ cookiecutter.bells_and_whistles }}",

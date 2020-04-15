@@ -8,25 +8,29 @@ from setuptools import find_packages, setup
 with open("README.md") as readme_file:
     readme = readme_file.read()
 
-test_requirements = ["codecov", "pytest", "pytest-cov", "pytest-raises"]
+test_requirements = [
+    {% if cookiecutter.tests is true -%}"codecov", "pytest", "pytest-cov", "pytest-raises"{% endif %}
+]
 
-docs_requirements = ["sphinx==1.8.5", "sphinx-rtd-theme"]
+docs_requirements = [
+    {% if cookiecutter.documentation is true -%}"sphinx==1.8.5", "sphinx-rtd-theme"{% endif %}
+]
 
-setup_requirements = ["pytest-runner"]
+setup_requirements = [
+    {% if cookiecutter.tests is true -%}"pytest-runner"{% endif %}
+]
 
 dev_requirements = [
     *test_requirements,
     *docs_requirements,
     *setup_requirements,
-    "pre-commit",
+    {% if cookiecutter.precommit is true -%}"pre-commit",{% endif %}
     "bumpversion>=0.5.3",
     "ipython>=7.5.0",
-    "tox>=3.5.2",
+    {% if cookiecutter.tests is true -%}"tox>=3.5.2",{% endif %}
     "twine>=1.13.0",
     "wheel>=0.33.1",
 ]
-
-interactive_requirements = ["altair", "jupyterlab", "matplotlib"]
 
 requirements = []
 
@@ -35,7 +39,6 @@ extra_requirements = {
     "docs": docs_requirements,
     "setup": setup_requirements,
     "dev": dev_requirements,
-    "interactive": interactive_requirements,
     "all": [
         *requirements,
         *test_requirements,
@@ -47,12 +50,11 @@ extra_requirements = {
 }
 
 {%- set license_classifiers = {
-    "Allen Institute Software License": "License :: Free for non-commercial use",
-    "MIT License": "License :: OSI Approved :: MIT License",
-    "BSD license": "License :: OSI Approved :: BSD License",
-    "ISC license": "License :: OSI Approved :: ISC License (ISCL)",
+    "MIT": "License :: OSI Approved :: MIT License",
+    "BSD": "License :: OSI Approved :: BSD License",
+    "ISC": "License :: OSI Approved :: ISC License (ISCL)",
     "Apache Software License 2.0": "License :: OSI Approved :: Apache Software License",
-    "GNU General Public License v3": "License :: OSI Approved :: GNU General Public License v3 (GPLv3)"
+    "GNU GPL v3": "License :: OSI Approved :: GNU General Public License v3 (GPLv3)"
 } %}
 
 setup(

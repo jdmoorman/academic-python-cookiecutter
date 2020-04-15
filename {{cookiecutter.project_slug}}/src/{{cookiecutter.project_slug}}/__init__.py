@@ -7,7 +7,7 @@ __version__ = "{{ cookiecutter.version }}"
 __author__ = "{{ cookiecutter.full_name }}"
 __email__ = "{{ cookiecutter.email }}"
 
-__license__ = "{{ cookiecutter.open_source_license }}".rstrip(" license")
+__license__ = "{{ cookiecutter.open_source_license }}"
 __copyright__ = "Copyright (c) {% now 'local', '%Y' %}, {{ cookiecutter.full_name }}"
 
 
