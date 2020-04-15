@@ -1,4 +1,5 @@
-import {{ cookiecutter.project_slug }}  # noqa: F401
+from {{ cookiecutter.project_slug }} import Example
 
 def test_example():
-    assert 1 == 1
+    e = Example()
+    assert e.get_value() == 10

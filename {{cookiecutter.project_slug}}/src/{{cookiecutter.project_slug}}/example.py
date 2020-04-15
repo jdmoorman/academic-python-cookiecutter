@@ -1,3 +1,3 @@
 class Example:
-    def get_value():
+    def get_value(self):
         return 10
