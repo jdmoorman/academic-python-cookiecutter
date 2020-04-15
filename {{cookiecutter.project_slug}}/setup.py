@@ -48,7 +48,7 @@ extra_requirements = {
 
 {%- set license_classifiers = {
     "Allen Institute Software License": "License :: Free for non-commercial use",
-    "MIT license": "License :: OSI Approved :: MIT License",
+    "MIT License": "License :: OSI Approved :: MIT License",
     "BSD license": "License :: OSI Approved :: BSD License",
     "ISC license": "License :: OSI Approved :: ISC License (ISCL)",
     "Apache Software License 2.0": "License :: OSI Approved :: Apache Software License",
@@ -60,16 +60,20 @@ setup(
     author_email="{{ cookiecutter.email }}",
     classifiers=[
         "Development Status :: 2 - Pre-Alpha",
-        "Intended Audience :: Developers",
+        "Intended Audience :: Science/Research ",
 {%- if cookiecutter.open_source_license in license_classifiers %}
         "{{ license_classifiers[cookiecutter.open_source_license] }}",
 {%- endif %}
         "Natural Language :: English",
+        "Programming Language :: Python",
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3 :: Only",
         "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
+        "Topic :: Scientific/Engineering",
     ],
-    description="{{ cookiecutter.project_short_description }}",
+    description="{{ cookiecutter.pypi_short_description }}",
     entry_points={
         "console_scripts": [
             "my_example={{ cookiecutter.project_slug }}.bin.my_example:main"

@@ -54,12 +54,11 @@ Make sure all your changes are committed.
 Then run:
 
 ```bash
-$ bumpversion patch # possible: major / minor / patch
+$ bump2version patch # possible: major / minor / patch
 $ git push
 $ git push --tags
-git branch -D stable
-git checkout -b stable
-git push --set-upstream origin stable -f
 ```
+
+Next, on GitHub, create a release from the version tag you have just created.
 
 This will release a new package version on Git + GitHub and publish to PyPI.
