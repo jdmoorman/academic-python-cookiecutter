@@ -12,7 +12,7 @@ This repository is a template for `cookiecutter` to generate a Python project.
 To use this template use the following commands and then follow the prompts from the terminal.
 
 1. `pip install cookiecutter`
-2. `cookiecutter gh:jdmoorman/cookiecutter-pypackage`
+2. `cookiecutter gh:jdmoorman/cookiecutter-academic-pypackage`
 
 ## Credits
 
