@@ -1,19 +1,27 @@
 {
-  "full_name": "Jackson Maxfield Brown",
-  "email": "jacksonb@alleninstitute.org",
-  "github_username": "AllenCellModeling",
+  "full_name": "Jacob Moorman",
+  "email": "jacob@moorman.me",
+  "github_username": "jdmoorman",
   "project_name": "Python Boilerplate",
   "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
-  "project_short_description": "Python Boilerplate contains all the boilerplate you need to create a Python package.",
-  "pypi_username": "{{ cookiecutter.github_username }}",
-  "version": "0.1.0",
+  "github_project_name": "{{ cookiecutter.project_slug }}",
+  "pypi_project_name": "{{ cookiecutter.project_slug }}",
+  "github_short_description": "Python Boilerplate contains all the boilerplate you need to create a Python package.",
+  "pypi_short_description": "{{ cookiecutter.github_short_description }}",
+  "version": "0.0.1",
   "open_source_license": [
-    "Allen Institute Software License",
-    "MIT license",
-    "BSD license",
-    "ISC license",
+    "MIT",
+    "BSD",
+    "ISC",
     "Apache Software License 2.0",
-    "GNU General Public License v3",
-    "Not open source"
-  ]
+    "GNU GPL v3"
+  ],
+  "bells_and_whistles": [false, true],
+  "command_line_interface": "{{ cookiecutter.bells_and_whistles }}",
+  "documentation": "{{ cookiecutter.bells_and_whistles }}",
+  "github_actions": "{{ cookiecutter.bells_and_whistles }}",
+  "precommit": "{{ cookiecutter.bells_and_whistles }}",
+  "tests": "{{ cookiecutter.bells_and_whistles }}",
+  "code_of_conduct": "{{ cookiecutter.bells_and_whistles }}",
+  "contributing": "{{ cookiecutter.bells_and_whistles }}"
 }

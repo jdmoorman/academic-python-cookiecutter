@@ -1,5 +1,5 @@
 Welcome to {{ cookiecutter.project_name }}'s documentation!
-======================================
+===============================================================
 
 .. toctree::
    :hidden:
@@ -8,11 +8,8 @@ Welcome to {{ cookiecutter.project_name }}'s documentation!
 
    Overview <self>
    installation
+..
    Package modules <modules>
-   contributing
-   math
-
-.. mdinclude:: ../README.md
 
 Indices and tables
 ==================

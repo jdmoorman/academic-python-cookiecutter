@@ -4,11 +4,12 @@ on: pull_request
 
 jobs:
   test:
+    name: Test in python ${{ matrix.python-version }} on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
         python-version: [3.6, 3.7, 3.8]
-        os: [ubuntu-latest, windows-latest, macOS-latest]
+        os: [ubuntu-latest, windows-latest, macos-latest]
 
     steps:
     - uses: actions/checkout@v1
@@ -18,25 +19,7 @@ jobs:
         python-version: ${{ matrix.python-version }}
     - name: Install Dependencies
       run: |
-        python -m pip install --upgrade pip
-        pip install .[test]
-    - name: Test with pytest
-      run: |
-        {% endraw %}pytest {{ cookiecutter.project_slug }}/tests/
-
-  lint:
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/checkout@v1
-    - name: Set up Python 3.7
-      uses: actions/setup-python@v1
-      with:
-        python-version: 3.7
-    - name: Install Dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install .[test]
-    - name: Lint with flake8
-      run: |
-        flake8 {{ cookiecutter.project_slug }} --count --verbose --max-line-length=127 --show-source --statistics
+        python -m pip install --upgrade pip setuptools wheel
+        python -m pip install --upgrade virtualenv tox tox-gh-actions
+    - name: "Run tox targets for ${{ matrix.python-version }}"
+      run: "python -m tox"{% endraw %}

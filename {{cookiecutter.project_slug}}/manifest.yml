@@ -1,0 +1,37 @@
+features:
+  - name: documentation
+    enabled: {{cookiecutter.documentation|lower}}
+    resources:
+      - docs
+
+  - name: github_actions
+    enabled: {{cookiecutter.github_actions|lower}}
+    resources:
+      - .github/workflows
+
+  - name: tests
+    enabled: {{cookiecutter.tests|lower}}
+    resources:
+      - tests
+      - tox.ini
+
+  - name: precommit
+    enabled: {{cookiecutter.precommit|lower}}
+    resources:
+      - .pre-commit-config.yaml
+      - .isort.cfg
+
+  - name: command_line_interface
+    enabled: {{cookiecutter.command_line_interface|lower}}
+    resources:
+      - src/{{cookiecutter.project_slug}}/bin
+
+  - name: code_of_conduct
+    enabled: {{cookiecutter.code_of_conduct|lower}}
+    resources:
+      - CODE_OF_CONDUCT.md
+
+  - name: contributing
+    enabled: {{cookiecutter.contributing|lower}}
+    resources:
+      - CONTRIBUTING.md
