@@ -41,8 +41,8 @@ jobs:
         BRANCH: 'example-build' # The branch the action should deploy to.
         FOLDER: python_boilerplate/ # The folder the action should deploy
         CLEAN: true
-    - name: Test Generate Docs
-      run: |
-        cd python_boilerplate
-        make gen-docs
-        touch docs/_build/html/.nojekyll
+    # - name: Test Generate Docs
+    #   run: |
+    #     cd python_boilerplate
+    #     make gen-docs
+    #     touch docs/_build/html/.nojekyll
