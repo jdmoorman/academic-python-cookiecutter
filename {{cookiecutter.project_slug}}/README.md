@@ -7,6 +7,7 @@
 {% if cookiecutter.github_actions | lower == "true" -%}[![Code Coverage](https://codecov.io/gh/{{ cookiecutter.github_username }}/{{ cookiecutter.github_project_name }}/branch/master/graph/badge.svg)](https://codecov.io/gh/{{ cookiecutter.github_username }}/{{ cookiecutter.github_project_name }}){% endif -%}
 {% if cookiecutter.precommit | lower == "true" -%}[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black){% endif -%}
 
+
 {{ cookiecutter.github_short_description }}
 
 ---
@@ -27,17 +28,19 @@
 ## Citing
 If you use our work in an academic setting, please cite our paper:
 
-
+{% if cookiecutter.sphinx_docs | lower == "true" %}
 ## Documentation
 TODO: readthedocs
 For more information, read the docs.
-
+{% endif %}
 
 ## Development
 See [CONTRIBUTING.md](CONTRIBUTING.md) for information related to developing the code.
 
 
 #### Additional Optional Setup Steps:
+* Create an initial release to test.PyPI and PyPI.
+  * Follow https://packaging.python.org/tutorials/packaging-projects/
 * Make sure the github repository initialized correctly at
     * `https://github.com:{{ cookiecutter.github_username }}/{{ cookiecutter.github_project_name }}.git`
 * Add branch protections to `master`

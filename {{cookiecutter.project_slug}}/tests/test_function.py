@@ -1,4 +1,4 @@
-from {{ cookiecutter.project_slug }} import Example
+from {{ cookiecutter.package_name }} import Example
 
 def test_example():
     e = Example()
