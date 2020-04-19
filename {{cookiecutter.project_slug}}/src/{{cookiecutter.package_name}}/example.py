@@ -1,4 +1,6 @@
 class Example:
+    """This class is only an example."""
+
     def get_value(self):
         """Spoiler: it's 10.
 
