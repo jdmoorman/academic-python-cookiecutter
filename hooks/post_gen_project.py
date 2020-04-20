@@ -35,9 +35,11 @@ def create_git_repo(manifest):
     subprocess.call(['git', 'init'])
 
     if precommit_enabled:
-        subprocess.call(['pre-commit', 'install'])
+        try:
+            subprocess.call(['pre-commit', 'install'])
+        except FileNotFoundError:
+            raise Exception("pre-commit not found. Please install pre-commit and try again.")
 
-    if precommit_enabled:
         # Hooks will fail the first time around, so we try twice.
         subprocess.run(['git', 'add', '.'], capture_output=True)
         subprocess.run(['git', 'commit', '-m', 'Initial commit'], capture_output=True)
