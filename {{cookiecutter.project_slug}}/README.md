@@ -46,20 +46,28 @@ For more information, read the docs.
 ## Development
 See [CONTRIBUTING.md](CONTRIBUTING.md) for information related to developing the code.
 
+#### Suggested Git Branch Strategy
+1. `master` is for the most up-to-date development, very rarely should you directly commit to this branch. Your day-to-day work should exist on branches separate from `master`. It is recommended to commit to development branches and make pull requests to master.
+{%- if cookiecutter.github_actions | lower == "true" -%}
+3. Even if it is just yourself working on the repository, make a pull request from your working branch to `master` so that you can ensure your commits don't break the development head. GitHub Actions will run on every push to any branch or any pull request from any branch to any other branch.
+{%- endif -%}
+4. It is recommended to use "Squash and Merge" commits when committing PR's. It makes each set of changes to `master`
+atomic and as a side effect naturally encourages small well defined PR's.
+
 
 #### Additional Optional Setup Steps:
 * Create an initial release to test.PyPI and PyPI.
     * Follow https://packaging.python.org/tutorials/packaging-projects/
 * Create a github repository and push the code to it.
-{% if cookiecutter.github_actions | lower == "true" %}
+{%- if cookiecutter.github_actions | lower == "true" -%}
 * Create an account on [codecov.io](https://codecov.io/) and link it with your GitHub account. Code coverage should be updated automatically when you commit to `master`.
 * Add branch protections to `master`
     * Go to your [GitHub repository's settings and under the `Branches` tab](https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.github_project_name }}/settings/branches), click `Add rule` and select the
     settings you believe best.
     * _Recommendations:_
       * _Require status checks to pass before merging_
-{% endif %}
-{% if cookiecutter.sphinx_docs | lower == "true" %}
+{%- endif -%}
+{%- if cookiecutter.sphinx_docs | lower == "true" -%}
 * Setup readthedocs. Create an account on [readthedocs.org](https://readthedocs.org/) and link it to your GitHub account.
     * Go to your account page and select "Import a Project".
     * Select the desired GitHub repository from the list, refreshing first if it is not present.
@@ -73,14 +81,5 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for information related to developing the
         * Add a new Rule called "Publish releases"
         * Set the Version type to "Tag"
         * Set the Action to "Set version as default"
-{% endif %}
-
-""#### Suggested Git Branch Strategy
-1. `master` is for the most up-to-date development, very rarely should you directly commit to this branch. It is recommended to commit to development
-branches and make pull requests to master.
-3. Your day-to-day work should exist on branches separate from `master`. Even if it is just yourself working on the
-repository, make a PR from your working branch to `master` so that you can ensure your commits don't break the
-development head. GitHub Actions will run on every push to any branch or any pull request from any branch to any other
-branch.
-4. It is recommended to use "Squash and Merge" commits when committing PR's. It makes each set of changes to `master`
-atomic and as a side effect naturally encourages small well defined PR's.
+{%- endif -%}
+* Delete these setup instructions from `README.md` when you are finished with them.
