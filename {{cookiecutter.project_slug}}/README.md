@@ -3,7 +3,7 @@
 [![PyPI Version](https://img.shields.io/pypi/v/{{ cookiecutter.pypi_project_name }}.svg)](https://pypi.org/project/{{ cookiecutter.pypi_project_name }}/)
 [![Supported Python Versions](https://img.shields.io/pypi/pyversions/{{ cookiecutter.pypi_project_name }}.svg)](https://pypi.org/project/{{ cookiecutter.pypi_project_name }}/)
 {% if cookiecutter.github_actions | lower == "true" -%}[![Build Status](https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.github_project_name }}/workflows/CI/badge.svg)](https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.github_project_name }}/actions){% endif %}
-{% if cookiecutter.sphinx_docs | lower == "true" -%}[![Documentation](https://readthedocs.org/projects/{{ cookiecutter.project_slug | replace("_", "-") }}/badge/?version=stable)](https://{{ cookiecutter.project_slug | replace("_", "-") }}.readthedocs.io/en/stable/?badge=stable) {% endif -%}
+{% if cookiecutter.sphinx_docs | lower == "true" -%}[![Documentation](https://readthedocs.org/projects/{{ cookiecutter.github_project_name }}/badge/?version=stable)](https://{{ cookiecutter.github_project_name }}.readthedocs.io/en/stable/?badge=stable) {% endif -%}
 {% if cookiecutter.github_actions | lower == "true" -%}[![Code Coverage](https://codecov.io/gh/{{ cookiecutter.github_username }}/{{ cookiecutter.github_project_name }}/branch/master/graph/badge.svg)](https://codecov.io/gh/{{ cookiecutter.github_username }}/{{ cookiecutter.github_project_name }}){% endif -%}
 {% if cookiecutter.precommit | lower == "true" -%}[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black){% endif -%}
 
@@ -49,16 +49,17 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for information related to developing the
 
 #### Additional Optional Setup Steps:
 * Create an initial release to test.PyPI and PyPI.
-  * Follow https://packaging.python.org/tutorials/packaging-projects/
-* Make sure the github repository initialized correctly at
-    * `https://github.com:{{ cookiecutter.github_username }}/{{ cookiecutter.github_project_name }}.git`
+    * Follow https://packaging.python.org/tutorials/packaging-projects/
+* Create a github repository and push the code to it.
+{% if cookiecutter.github_actions | lower == "true" %}
+* Create an account on [codecov.io](https://codecov.io/) and link it with your GitHub account. Code coverage should be updated automatically when you commit to `master`.
 * Add branch protections to `master`
-    * To protect from just anyone pushing to `master`
     * Go to your [GitHub repository's settings and under the `Branches` tab](https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.github_project_name }}/settings/branches), click `Add rule` and select the
     settings you believe best.
     * _Recommendations:_
-      * _Require pull request reviews before merging_
       * _Require status checks to pass before merging_
+{% endif %}
+{% if cookiecutter.sphinx_docs | lower == "true" %}
 * Setup readthedocs. Create an account on [readthedocs.org](https://readthedocs.org/) and link it to your GitHub account.
     * Go to your account page and select "Import a Project".
     * Select the desired GitHub repository from the list, refreshing first if it is not present.
@@ -72,6 +73,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for information related to developing the
         * Add a new Rule called "Publish releases"
         * Set the Version type to "Tag"
         * Set the Action to "Set version as default"
+{% endif %}
 
 ""#### Suggested Git Branch Strategy
 1. `master` is for the most up-to-date development, very rarely should you directly commit to this branch. It is recommended to commit to development
