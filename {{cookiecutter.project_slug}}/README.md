@@ -57,17 +57,17 @@ atomic and as a side effect naturally encourages small well defined PR's.
 
 #### Additional Optional Setup Steps:
 * Create an initial release to test.PyPI and PyPI.
-    * Follow https://packaging.python.org/tutorials/packaging-projects/
-* Create a github repository and push the code to it.
-{% if cookiecutter.github_actions | lower == "true" -%}
+    * Follow [This PyPA tutorial](https://packaging.python.org/tutorials/packaging-projects/#generating-distribution-archives), starting from the "Generating distribution archives" section.
+
+* Create a blank github repository (without a README or .gitignore) and push the code to it.
+{% if cookiecutter.github_actions | lower == "true" %}
 * Create an account on [codecov.io](https://codecov.io/) and link it with your GitHub account. Code coverage should be updated automatically when you commit to `master`.
 * Add branch protections to `master`
     * Go to your [GitHub repository's settings and under the `Branches` tab](https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.github_project_name }}/settings/branches), click `Add rule` and select the
     settings you believe best.
     * _Recommendations:_
       * _Require status checks to pass before merging_
-{% endif -%}
-{% if cookiecutter.sphinx_docs | lower == "true" -%}
+{% endif %}{% if cookiecutter.sphinx_docs | lower == "true" %}
 * Setup readthedocs. Create an account on [readthedocs.org](https://readthedocs.org/) and link it to your GitHub account.
     * Go to your account page and select "Import a Project".
     * Select the desired GitHub repository from the list, refreshing first if it is not present.
@@ -81,5 +81,5 @@ atomic and as a side effect naturally encourages small well defined PR's.
         * Add a new Rule called "Publish releases"
         * Set the Version type to "Tag"
         * Set the Action to "Set version as default"
-{% endif -%}
+{% endif %}
 * Delete these setup instructions from `README.md` when you are finished with them.
