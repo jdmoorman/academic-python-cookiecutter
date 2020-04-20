@@ -1,13 +1,14 @@
 Welcome to {{ cookiecutter.project_name }}'s documentation!
 ===============================================================
 
+.. mdinclude:: ../README.md
+
 .. toctree::
-   :hidden:
    :maxdepth: 1
    :caption: Contents:
 
    Overview <self>
-   installation
+   module
 ..
    Package modules <modules>
 

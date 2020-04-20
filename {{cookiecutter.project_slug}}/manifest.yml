@@ -3,6 +3,7 @@ features:
     enabled: {{cookiecutter.sphinx_docs|lower}}
     resources:
       - docs
+      - rtd-reqs.txt
 
   - name: github_actions
     enabled: {{cookiecutter.github_actions|lower}}

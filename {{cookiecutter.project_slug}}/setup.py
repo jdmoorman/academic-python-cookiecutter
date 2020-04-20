@@ -9,15 +9,15 @@ with open("README.md") as readme_file:
     readme = readme_file.read()
 
 test_requirements = [
-    {% if cookiecutter.tests | lower == "true" -%}"pytest", "pytest-cov", "pytest-raises"{% endif %}
+    {% if cookiecutter.tests | lower == "true" -%}"pytest", "pytest-cov", "pytest-raises",{% endif %}
 ]
 
 docs_requirements = [
-    {% if cookiecutter.sphinx_docs | lower == "true" -%}"sphinx==1.8.5", "sphinx-rtd-theme"{% endif %}
+    {% if cookiecutter.sphinx_docs | lower == "true" -%}"sphinx==1.8.5", "sphinx-rtd-theme", "m2r",{% endif %}
 ]
 
 setup_requirements = [
-    {% if cookiecutter.tests | lower == "true" -%}"pytest-runner"{% endif %}
+    {% if cookiecutter.tests | lower == "true" -%}"pytest-runner",{% endif %}
 ]
 
 dev_requirements = [
@@ -53,7 +53,7 @@ extra_requirements = {
     "BSD": "License :: OSI Approved :: BSD License",
     "ISC": "License :: OSI Approved :: ISC License (ISCL)",
     "Apache Software License 2.0": "License :: OSI Approved :: Apache Software License",
-    "GNU GPL v3": "License :: OSI Approved :: GNU General Public License v3 (GPLv3)"
+    "GNU GPL v3": "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
 } %}
 
 setup(

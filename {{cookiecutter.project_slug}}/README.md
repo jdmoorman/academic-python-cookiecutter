@@ -3,7 +3,7 @@
 [![PyPI Version](https://img.shields.io/pypi/v/{{ cookiecutter.pypi_project_name }}.svg)](https://pypi.org/project/{{ cookiecutter.pypi_project_name }}/)
 [![Supported Python Versions](https://img.shields.io/pypi/pyversions/{{ cookiecutter.pypi_project_name }}.svg)](https://pypi.org/project/{{ cookiecutter.pypi_project_name }}/)
 {% if cookiecutter.github_actions | lower == "true" -%}[![Build Status](https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.github_project_name }}/workflows/CI/badge.svg)](https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.github_project_name }}/actions){% endif %}
-{% if cookiecutter.sphinx_docs | lower == "true" -%}[![Documentation](https://readthedocs.org/projects/{{ cookiecutter.project_slug | replace("_", "-") }}/badge/?version=latest)](https://{{ cookiecutter.project_slug | replace("_", "-") }}.readthedocs.io/en/latest/?badge=latest) {% endif -%}
+{% if cookiecutter.sphinx_docs | lower == "true" -%}[![Documentation](https://readthedocs.org/projects/{{ cookiecutter.project_slug | replace("_", "-") }}/badge/?version=stable)](https://{{ cookiecutter.project_slug | replace("_", "-") }}.readthedocs.io/en/stable/?badge=stable) {% endif -%}
 {% if cookiecutter.github_actions | lower == "true" -%}[![Code Coverage](https://codecov.io/gh/{{ cookiecutter.github_username }}/{{ cookiecutter.github_project_name }}/branch/master/graph/badge.svg)](https://codecov.io/gh/{{ cookiecutter.github_username }}/{{ cookiecutter.github_project_name }}){% endif -%}
 {% if cookiecutter.precommit | lower == "true" -%}[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black){% endif -%}
 
@@ -13,8 +13,17 @@
 ---
 
 ## Installation
-**Stable Release:** `pip install {{ cookiecutter.project_slug }}`<br>
-**Development Head:** `pip install git+https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.github_project_name }}.git`
+
+To install {{ cookiecutter.project_name }}, run this command in your terminal:
+
+```bash
+    $ pip install -U {{ cookiecutter.pypi_project_name }}
+```
+
+This is the preferred method to install {{ cookiecutter.project_name }}, as it will always install the most recent stable release.
+
+If you don't have [pip](https://pip.pypa.io) installed, these [installation instructions](http://docs.python-guide.org/en/latest/starting/installation/) can guide
+you through the process.
 
 ## Quick Start
 ```python
@@ -50,8 +59,21 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for information related to developing the
     * _Recommendations:_
       * _Require pull request reviews before merging_
       * _Require status checks to pass before merging_
+* Setup readthedocs. Create an account on [readthedocs.org](https://readthedocs.org/) and link it to your GitHub account.
+    * Go to your account page and select "Import a Project".
+    * Select the desired GitHub repository from the list, refreshing first if it is not present.
+    * Go to the admin panel of the new project and make some changes to the "advanced settings":
+        * Enable "Show version warning"
+        * Enter "rtd-reqs.txt" into the "Requirements file" field
+        * Enable "Install Project"
+        * Enable "Use system packages"
+        * Make sure to click save at the bottom when you are finished editing the settings
+    * Go to the admin panel and find the "Automation Rules" tab.
+        * Add a new Rule called "Publish releases"
+        * Set the Version type to "Tag"
+        * Set the Action to "Set version as default"
 
-#### Suggested Git Branch Strategy
+""#### Suggested Git Branch Strategy
 1. `master` is for the most up-to-date development, very rarely should you directly commit to this branch. It is recommended to commit to development
 branches and make pull requests to master.
 3. Your day-to-day work should exist on branches separate from `master`. Even if it is just yourself working on the
