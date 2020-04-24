@@ -1,4 +1,5 @@
 import subprocess
+from subprocess import PIPE
 import os
 import shutil
 import yaml
@@ -41,8 +42,8 @@ def create_git_repo(manifest):
             raise Exception("pre-commit not found. Please install pre-commit and try again.")
 
         # Hooks will fail the first time around, so we try twice.
-        subprocess.run(['git', 'add', '.'], capture_output=True)
-        subprocess.run(['git', 'commit', '-m', 'Initial commit'], capture_output=True)
+        subprocess.run(['git', 'add', '.'], stdout=PIPE, stderr=PIPE)
+        subprocess.run(['git', 'commit', '-m', 'Initial commit'], stdout=PIPE, stderr=PIPE)
 
     subprocess.call(['git', 'add', '.'])
     subprocess.call(['git', 'commit', '-m', 'Initial commit'])
