@@ -40,8 +40,9 @@ This will create a directory with name `<project_slug>` in your current director
 After making some changes, you will be ready to publish your package.
 * Put your code in the `src/[package_name]` directory. 
 * Specify your dependencies in the currently empty `requirements = []` list in `setup.py`. 
-* Try to install your project with `pip install -e .` and check whether it is usable with
+* Try to install your project and check whether it is usable with
   ```bash
+  $ pip install -e .
   $ python
   ```
   ```python
