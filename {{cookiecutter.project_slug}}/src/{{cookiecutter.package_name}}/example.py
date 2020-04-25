@@ -5,6 +5,7 @@ class Example:
         """Spoiler: it's 10.
 
         Example:
+            >>> from {{ cookiecutter.package_name }} import Example
             >>> e = Example()
             >>> e.get_value()
             10
