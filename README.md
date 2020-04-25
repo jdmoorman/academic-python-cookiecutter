@@ -17,7 +17,7 @@ There are various optional features available through the template:
 * Optionally include `CODE_OF_CONDUCT.md` and `CONTRIBUTING.md`, if you welcome outside contributions.
 
 ## Quickstart
-To use this template use the following commands and then follow the prompts from the terminal.
+To use this template use the following commands and then follow the prompts from the terminal to specify information about your project.
 
 1. `pip install cookiecutter`
 2. `cookiecutter gh:jdmoorman/cookiecutter-academic-pypackage`
