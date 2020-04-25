@@ -22,11 +22,6 @@ features:
       - .pre-commit-config.yaml
       - .isort.cfg
 
-  - name: command_line_interface
-    enabled: {{cookiecutter.command_line_interface|lower}}
-    resources:
-      - src/{{cookiecutter.project_slug}}/bin
-
   - name: code_of_conduct
     enabled: {{cookiecutter.code_of_conduct|lower}}
     resources:

@@ -75,13 +75,6 @@ setup(
         "Topic :: Scientific/Engineering",
     ],
     description="{{ cookiecutter.pypi_short_description }}",
-{%- if cookiecutter.command_line_interface | lower == "true" %}
-    entry_points={
-        "console_scripts": [
-            "my_example={{ cookiecutter.project_slug }}.bin.my_example:main"
-        ],
-    },
-{%- endif %}
     install_requires=requirements,
 {%- if cookiecutter.open_source_license in license_classifiers %}
     license="{{ cookiecutter.open_source_license }}",
