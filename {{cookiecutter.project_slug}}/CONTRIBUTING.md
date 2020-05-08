@@ -11,7 +11,7 @@ Ready to contribute? Here's how to set up {{ cookiecutter.project_name }} for lo
 2. Clone your fork locally:
 
     ```bash
-    git clone git@github.com:{your_name_here}/{{ cookiecutter.github_project_name }}.git
+    $ git clone git@github.com:{your_name_here}/{{ cookiecutter.github_project_name }}.git
     ```
 
 3. Install the project in editable mode. (It is also recommended to work in a virtualenv or anaconda environment):

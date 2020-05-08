@@ -2,5 +2,5 @@
 Autodoc Example
 ===============
 
-.. autoclass:: {{ cookiecutter.package_name }}.Example
+.. automodule:: {{ cookiecutter.package_name }}
    :members:
