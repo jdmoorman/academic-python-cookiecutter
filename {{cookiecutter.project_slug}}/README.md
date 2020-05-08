@@ -76,9 +76,5 @@ atomic and as a side effect naturally encourages small well defined PR's.
         * Enable "Install Project"
         * Enable "Use system packages"
         * Make sure to click save at the bottom when you are finished editing the settings
-    * Go to the admin panel and find the "Automation Rules" tab.
-        * Add a new Rule called "Publish releases"
-        * Set the Version type to "Tag"
-        * Set the Action to "Set version as default"
 {% endif %}
 * Delete these setup instructions from `README.md` when you are finished with them.
