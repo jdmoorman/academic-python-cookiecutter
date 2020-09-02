@@ -1,4 +1,4 @@
-{% raw %}name: Test and Lint
+{% raw %}name: Test
 
 on: pull_request
 

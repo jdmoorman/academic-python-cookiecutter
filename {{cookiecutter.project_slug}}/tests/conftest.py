@@ -1,5 +1,5 @@
 """
-Dummy conftest.py for clapsolver.
+Dummy conftest.py for {{ cookiecutter.package_name }}.
 
 If you don't know what this is for, just leave it empty.
 Read more about conftest.py under:

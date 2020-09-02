@@ -19,7 +19,7 @@ To install {{ cookiecutter.project_name }}, run this command in your terminal:
 $ pip install -U {{ cookiecutter.pypi_project_name }}
 ```
 
-This is the preferred method to install {{ cookiecutter.project_name }}, as it will always install the most recent stable release.
+This is the preferred method to install {{ cookiecutter.project_name }}, as it will always install the most recent release.
 
 If you don't have [pip](https://pip.pypa.io) installed, these [installation instructions](http://docs.python-guide.org/en/latest/starting/installation/) can guide
 you through the process.
