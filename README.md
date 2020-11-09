@@ -20,7 +20,7 @@ There are various optional features available through the template:
 To use this template use the following commands and then follow the prompts from the terminal to specify information about your project.
 
 1. `pip install cookiecutter`
-2. `cookiecutter gh:jdmoorman/cookiecutter-academic-pypackage`
+2. `cookiecutter gh:jdmoorman/academic-python-cookiecutter`
 
 This will create a directory with name `<project_slug>` in your current directory containing at least the following files, depending on which `bells_and_whistles` you select.
 
